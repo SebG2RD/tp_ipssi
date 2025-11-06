@@ -1,0 +1,78 @@
+:root {
+  --color-primary: #667eea;
+  --color-secondary: #764ba2;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red: #ff0000;
+  --opacity-container: 0.5;
+  --opacity-shadow: 0.3;
+  --white-rgb: 255, 255, 255;
+  --black-rgb: 0, 0, 0;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container-custom {
+  animation: fadeIn 0.5s ease-in;
+  background: rgba(var(--white-rgb), var(--opacity-container));
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(var(--black-rgb), var(--opacity-shadow));
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.required {
+  color: var(--color-red);
+  font-size: 12px;
+  margin-left: 5px;
+}

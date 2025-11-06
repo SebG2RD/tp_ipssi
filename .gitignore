@@ -1,0 +1,10 @@
+# Fichier d'environnement (contient des informations sensibles)
+.env
+
+# Fichiers de log
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
