@@ -71,7 +71,7 @@ if (empty($prenom)) {
 if (!empty($erreurs)) {
     renvoyerJson([
         'success' => false,
-        'message' => 'Veuillez corriger les erreurs',
+        'message' => '❌ Erreur : Veuillez corriger les erreurs',
         'erreurs' => $erreurs
     ]);
 }
@@ -83,8 +83,8 @@ try {
     if ($stmt->fetch()) {
         renvoyerJson([
             'success' => false,
-            'message' => 'Vous êtes déjà inscrit',
-            'erreurs' => ['email' => 'Votre email est déjà utilisé']
+            'message' => '❌ Erreur : Vous êtes déjà inscrit.',
+            'erreurs' => ['email' => '❌ Erreur : Votre email est déjà utilisé']
         ]);
     }
 
@@ -95,7 +95,7 @@ try {
     // Tout est bon, on renvoie un succès
     renvoyerJson([
         'success' => true,
-        'message' => "Inscription réussie ! Bienvenue $prenom $nom",
+        'message' => "✅ Succès : Merci, votre email a bien été ajouté. Bienvenue $prenom $nom !",
         'donnees' => [
             'email' => $email,
             'nom' => $nom,
@@ -104,7 +104,7 @@ try {
     ]);
 } catch (PDOException $e) {
     // Message d'erreur à afficher à l'utilisateur
-    $messageErreur = 'Erreur lors de l\'enregistrement';
+    $messageErreur = "❌ Erreur : Attention, nous n\'avons pas été en mesure de traiter votre demande";
 
     // Log l'erreur complète dans un fichier (pour le débogage)
     error_log('Erreur inscription: ' . $e->getMessage());
