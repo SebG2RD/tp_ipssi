@@ -84,7 +84,7 @@ try {
         renvoyerJson([
             'success' => false,
             'message' => '❌ Erreur : Vous êtes déjà inscrit.',
-            'erreurs' => ['email' => '❌ Erreur : Votre email est déjà utilisé']
+            'erreurs' => ['email' => '❌ Erreur : Votre email est déjà utilisé.']
         ]);
     }
 
